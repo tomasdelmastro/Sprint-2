@@ -9,6 +9,7 @@ let sum = 0;
 
 const sumo = () => {
 	sum += parseInt(monto.value);
+
 }
 
 function esta() {
@@ -28,13 +29,22 @@ const addPeople = () => {
 }
 
 const myFunction=() => {
-	if(esta()){
-		addPeople();
-		act();
-		lista.innerHTML += `<p>${nombre.value}</p>`;
-	}
-	else{
-		sumo()
-		act()
-	}
+	if(nombre.value == ""){
+        alert('debe completar los campos')
+        
+    } else {
+
+        if(esta()){
+            addPeople();
+            act();
+            lista.innerHTML += `<p>${nombre.value} gasto $${monto.value}</p>`;
+        }
+        else{
+            sumo()
+            act()
+        }
+            
+            
+    }
+
 }
